@@ -54,7 +54,7 @@ function Footer() {
             </div>
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col bg-dark text-white d-flex justify-content-between align-items-center text-align-center">
+                    <div className="col d-flex justify-content-between align-items-center text-align-center" style={{backgroundColor: '#FDAC4F'}}>
                         <p className='fs-5'>2023 Pakistan's E-Learning Platform</p>
                         <a className='fs-1 fw-bolder' href="#pronav"><BsArrowUpSquareFill /></a>
                     </div>

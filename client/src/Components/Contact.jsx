@@ -1,8 +1,10 @@
 import React, { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser';
-import { toast } from 'react-hot-toast'
-
-import Form from 'react-bootstrap/Form';
+import { toast } from 'react-hot-toast';
+import { FaUserAlt, FaAddressCard } from 'react-icons/fa'
+import { MdMarkEmailUnread } from 'react-icons/md'
+import { BsTelephoneInboundFill } from 'react-icons/bs'
+import { SiCoursera } from 'react-icons/si'
 
 function Contact() {
 
@@ -15,7 +17,7 @@ function Contact() {
       'service_2hq36ck',
       'template_qjve0lg',
       form.current,
-      'uxEuhn2BYFGjJRZCK')
+      'KJdrh5tOlw8_FLo_D')
 
       .then((result) => {
         console.log(result.text);
@@ -42,28 +44,96 @@ function Contact() {
         <div className="row">
           <div className="col">
             <form ref={form} onSubmit={sendEmail}>
-              <Form.Group className="mb-3" controlId="formBasicFirstName">
-                <Form.Label className='fs-5 fw-bold'>Name:</Form.Label>
-                <Form.Control name='Std_name' type="text" placeholder="Example@Anus" required />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label className='fs-5 fw-bold'>Email:</Form.Label>
-                <Form.Control name='Std_email' type="email" placeholder="Example@gmail.com" required />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPhone">
-                <Form.Label className='fs-5 fw-bold'>Phone No:</Form.Label>
-                <Form.Control name='Std_phone_No' type="number" placeholder="03-" required />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicCourse">
-                <Form.Label className='fs-5 fw-bold'>Course:</Form.Label>
-                <Form.Control  name='Std_courseName' type="text" placeholder="Example@Chemistry" required />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Label className='fs-5 fw-bold'>Write your thoughts:</Form.Label>
-                <Form.Control name='Std_text' placeholder='Write here...' as="textarea" rows={3} />
-              </Form.Group>
-              <button type="submit" className="btn btn-outline-dark mt-3 my-3" >
-                Submit it
+              <div className="mb-3">
+                <label htmlFor="exampleInputText1" className="form-label fs-5">
+                  <FaUserAlt />  Name:
+                </label>
+                <input
+                  // value={name}
+                  // onChange={(e) => setName(e.target.value)}
+                  style={{ border: '2px solid black' }}
+                  name='Std_name'
+                  type="text"
+                  className="form-control"
+                  id="exampleInputText1"
+                  aria-describedby="textHelp"
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="exampleInputEmail1" className="form-label fs-5">
+                  <MdMarkEmailUnread />  Email Address:
+                </label>
+                <input
+                  // value={email}
+                  // onChange={(e) => setEmail(e.target.value)}
+                  style={{ border: '2px solid black' }}
+                  name='Std_email'
+                  type="email"
+                  className="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="exampleInputNumber1" className="form-label fs-5">
+                  <BsTelephoneInboundFill />  Phone No:
+                </label>
+                <input
+                  // value={phoneNo}
+                  // onChange={(e) => setPhoneNo(e.target.value)}
+                  style={{ border: '2px solid black' }}
+                  name='Std_phone_No'
+                  type="number"
+                  className="form-control"
+                  id="exampleInputNumber1"
+                  aria-describedby="numberHelp"
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="exampleInputText2" className="form-label fs-5">
+                  <SiCoursera />   Course Name:
+                </label>
+                <input
+                  // value={courseName}
+                  // onChange={(e) => setCourseName(e.target.value)}
+                  style={{ border: '2px solid black' }}
+                  name='Std_courseName'
+                  type="text"
+                  className="form-control"
+                  id="exampleInputText2"
+                  aria-describedby="textHelp"
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="exampleAddress" className="form-label fs-5">
+                  <FaAddressCard />  Address
+                </label>
+                <input
+                  style={{ border: '2px solid black' }}
+                  // value={address}
+                  // onChange={(e) => setAddress(e.target.value)}
+                  name='Std_address'
+                  type="text"
+                  className="form-control"
+                  id="exampleAddress"
+                  aria-describedby="textHelp"
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="exampleFormControlTextarea1" className="form-label fs-5 ">
+                  Write your thoughts
+                </label>
+                <textarea
+                style={{ border: '2px solid black' }}
+                name='Std_text'
+                  className="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows={3}
+                  defaultValue={""}
+                />
+              </div>
+              <button type="submit" className="btn btn-outline-dark mt-3 px-4" >
+                Apply Here
               </button>
             </form>
           </div>
@@ -71,6 +141,10 @@ function Contact() {
       </div>
 
     </div>
+    // <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+    //   <Form.Label className='fs-5 fw-bold'>Write your thoughts:</Form.Label>
+    //   <Form.Control name='Std_text' placeholder='Write here...' as="textarea" rows={3} />
+    // </Form.Group>
   )
 }
 
